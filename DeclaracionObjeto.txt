@@ -1,0 +1,60 @@
+<html>
+<head>
+
+<script>
+
+//Hay tres formas de declarar un objeto
+
+//Declaración con el objeto new object
+var miMovil = new Object();
+miMovil.nombre="iPhone";
+miMovil.panel=5.5;
+
+//Declaración literal del objeto
+var miMovil2={nombre:"Huawei", panel:5.7}
+
+//Declaración de tipo personalizada
+function miMovilObjeto (nombre,panel){
+this.nombre=nombre;
+this.panel=panel;
+this.estafuncion=funcioninventada;
+}
+
+function funcioninventada (){
+return 2;
+}
+miMovil4= new miMovilObjeto ("Samsung", 8);
+document.write(miMovil.nombre+" "+miMovil.panel+" <br>");
+document.write(miMovil2.nombre+" "+miMovil2.panel+" <br>");
+
+miMovil3= new miMovilObjeto("Moto G", 6.4);
+document.write(miMovil3.nombre+" "+miMovil3.panel+" <br>");
+
+//Con prototype se pueden añadir atributos y funciones al objeto ya creado, atributo u metodo que heredarán todos los objetos creados con
+//esa función constructora
+miMovilObjeto.prototype.categoria="electronica de consumo";
+
+document.write(miMovil3.categoria+" <br>");
+miMovilObjeto.prototype.getNombrePanel=function (){ document.write( this.nombre+" "+this.panel);};
+
+document.write(miMovil4.categoria);
+document.write("<br>"miMovil4.estafuncion());
+
+//PREGUNTA: Solo los objetos creados tras declarar una nueva propiedad con prototype heredan el atributo o la propiedad : FALSE
+
+
+</script>
+</head>
+<body>
+<h2> Las tres formas de declarar un objeto </h2>
+
+<h4> Usando new</h4>
+
+<h4> Notación literal</h4>
+
+<h4> Basado en un tipo personalizado</h4>
+
+
+
+</body>
+</html>
